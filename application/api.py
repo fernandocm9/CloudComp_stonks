@@ -7,8 +7,8 @@ response = requests.get(url)
 data = response.json()
 # file_path = "output.txt"
 
-metaData = open('metaData.txt', "w")
-values = open('values.txt', "w")
+metaData = open('.\\data\\metaData.txt', "w")
+values = open('.\\data\\values.txt', "w")
 
 metaData.write(str(data['Meta Data']))
 values.write(str(data['Time Series (Daily)']))

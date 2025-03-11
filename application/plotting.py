@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import base64
 from io import BytesIO
 import mplfinance as mpf
@@ -17,8 +16,6 @@ df['Date'] = pd.to_datetime(df['Date'])
 df.set_index('Date', inplace=True)
 tempfile = BytesIO()
 mpf.plot(df, type='candle', volume=True, style='yahoo', title='Sample Candlestick Chart',savefig=dict(fname=tempfile, format='png'))
-
-
 
 # Encode graph into temporary png file
 encoded = base64.b64encode(tempfile.getvalue()).decode('utf-8')
