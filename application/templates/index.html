@@ -45,7 +45,9 @@
         }
 
         async function APIchecker(symbol, choice) {
-            let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=Y5M68XBXFU2HZ9H6`;
+            //let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=Y5M68XBXFU2HZ9H6`;
+            //let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=KY71PQJ0ICH0O3EY`;
+            let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=DLYQY88QXZO200NM`;
 
             try {
                 let response = await fetch(apiUrl);

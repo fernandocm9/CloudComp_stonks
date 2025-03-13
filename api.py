@@ -2,7 +2,8 @@
 import requests
 
 # replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
-url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&datatype=json&apikey=Y5M68XBXFU2HZ9H6'
+# url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&datatype=json&apikey=Y5M68XBXFU2HZ9H6'
+url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&datatype=json&apikey=DLYQY88QXZO200NM'
 response = requests.get(url)
 data = response.json()
 # file_path = "output.txt"
