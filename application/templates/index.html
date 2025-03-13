@@ -58,6 +58,11 @@
                 console.log(`Symbol: ${symbol}, Timeframe: ${choice}`);
                 console.log(data);
 
+                if (data['bestMatches'].length == 0){
+                    console.log('no matches found for symbol input')
+                    return
+                }
+
                 await fetch("http://127.0.0.1:5000/parse_data", {
                             method: "POST",
                             headers: {
