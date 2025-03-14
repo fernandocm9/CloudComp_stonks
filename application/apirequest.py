@@ -8,11 +8,12 @@ import requests
 
 
 def api_request(symbol,timeframe):
+    print('api_request function')
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{timeframe}&symbol={symbol}&datatype=json&apikey=DLYQY88QXZO200NM'
     # response = requests.get(url)
     response = requests.get(url)
     data2 = response.json()
-    print(data2)
+    # print(data2)
     
     if timeframe == 'DAILY':
         timeframe = 'Daily'
@@ -22,7 +23,6 @@ def api_request(symbol,timeframe):
         timeframe = 'Monthly'
         
     print(timeframe)
-    # file_path = "output.txt"
 
     metaData = open('./application/metaData.txt', "w")
     values = open('./application/values.txt', "w")
@@ -32,4 +32,5 @@ def api_request(symbol,timeframe):
 
     metaData.close()
     values.close()
+    print('created and wrote to files')
     return 

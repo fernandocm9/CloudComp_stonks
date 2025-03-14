@@ -17,7 +17,7 @@ def parse_data():
         timeframe = data.get('choice')
         options = data.get('api_response')
         
-        print(data)
+        # print(data)
         
         for element in options['bestMatches']:
             if element['4. region'] == 'United States':
@@ -26,8 +26,9 @@ def parse_data():
             
         print(symbol, timeframe)
         apirequest.api_request(symbol,timeframe)
-        symbol_and_data_list = dataplot.extract_data_from_file()
-        dataplot.plot_data_points(symbol_and_data_list)
+        # symbol_and_data_list = dataplot.extract_data_from_file()
+        dataplot.extract_data_from_file()
+        # dataplot.plot_data_points(symbol_and_data_list)
         return render_template("graph.html")
         
     except:

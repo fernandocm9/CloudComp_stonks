@@ -6,25 +6,39 @@ from io import BytesIO
 
 
 def extract_data_from_file():
-    metadata = open("metaData.txt", "r")
-    data = open("values.txt", "r")
-
-    metadata_list = metadata.read().split(" ")
-    data_list = data.read().split("}")
-    data_list[0] = data_list[0][1:]
-    data_list.pop(-1)
-    data_list.pop(-1)
-
-
-    metadata.close()
-    data.close()
+    print('extract_data_from_file function')
     
-    symbol = metadata_list[12]
-    return [symbol, data_list]
+    try:
+        metadata = open("metaData.txt", "r")
+        data = open("values.txt", "r")
+            
+        
+        print('opened files')
+
+        metadata_list = metadata.read().split(" ")
+        data_list = data.read().split("}")
+        data_list[0] = data_list[0][1:]
+        data_list.pop(-1)
+        data_list.pop(-1)
+
+
+        metadata.close()
+        data.close()
+        
+        symbol = metadata_list[12]
+        
+        plot_data_points([symbol, data_list])
+    except FileNotFoundError:
+        print('Error: file not found')
+    except PermissionError:
+        print('Error: permission error')
+    except Exception as e:
+        print(f'unexpected error: {e}')
     
     
 
 def plot_data_points(data_list):
+    print('plot_data_points function')
     symbol = data_list[0]
     count = 0
     date, trade_open, trade_high, trade_low, trade_close, trade_volume = [],[],[],[],[],[]
