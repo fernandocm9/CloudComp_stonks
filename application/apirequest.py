@@ -13,7 +13,7 @@ def api_request(symbol,timeframe):
     # response = requests.get(url)
     response = requests.get(url)
     data2 = response.json()
-    # print(data2)
+    #print(data2)
     
     if timeframe == 'DAILY':
         timeframe = 'Daily'
@@ -28,7 +28,11 @@ def api_request(symbol,timeframe):
     values = open('./application/values.txt', "w")
 
     metaData.write(str(data2['Meta Data']))
-    values.write(str(data2[f'Time Series ({timeframe})']))
+    if timeframe == 'Daily':
+        values.write(str(data2['Time Series (Daily)']))
+    else:
+        values.write(str(data2[f'{timeframe} Time Series']))
+    
 
     metaData.close()
     values.close()
