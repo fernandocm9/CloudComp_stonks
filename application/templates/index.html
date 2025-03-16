@@ -25,6 +25,9 @@
         <input type="submit" value="Submit">
     </form>
 
+    <br><br><br>
+    <img src="../../graph.png" alt="">
+
     <script>
         function handleForm(event) {
             event.preventDefault(); // Prevent form from reloading page
@@ -45,9 +48,9 @@
         }
 
         async function APIchecker(symbol, choice) {
-            //let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=Y5M68XBXFU2HZ9H6`;
+            let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=Y5M68XBXFU2HZ9H6`;
             //let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=KY71PQJ0ICH0O3EY`;
-            let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=DLYQY88QXZO200NM`;
+            // let apiUrl = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&datatype=json&apikey=DLYQY88QXZO200NM`;
 
             try {
                 let response = await fetch(apiUrl);
