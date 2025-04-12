@@ -7,7 +7,7 @@ import requests
 def api_request(symbol,timeframe):
     print('api_request function')
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{timeframe}&symbol={symbol}&datatype=json&apikey=Y5M68XBXFU2HZ9H6'
-    # url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{timeframe}&symbol={symbol}&datatype=json&apikey=KY71PQJ0ICH0O3EY'
+    #url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{timeframe}&symbol={symbol}&datatype=json&apikey=KY71PQJ0ICH0O3EY'
     # url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{timeframe}&symbol={symbol}&datatype=json&apikey=DLYQY88QXZO200NM'
     # response = requests.get(url)
     response = requests.get(url)

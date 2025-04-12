@@ -1,1 +1,1 @@
-{'1. Information': 'Weekly Prices (open, high, low, close) and Volumes', '2. Symbol': 'TSLA', '3. Last Refreshed': '2025-03-14', '4. Time Zone': 'US/Eastern'}5. Time Zone': 'US/Eastern'}
+{'1. Information': 'Daily Prices (open, high, low, close) and Volumes', '2. Symbol': 'NFLX', '3. Last Refreshed': '2025-04-11', '4. Output Size': 'Compact', '5. Time Zone': 'US/Eastern'}}
