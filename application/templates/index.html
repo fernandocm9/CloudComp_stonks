@@ -1,32 +1,149 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Stonks</title>
-</head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e6ecf0, #fefefe);
+            margin: 0;
+            padding: 0;
+        }
 
+        .container {
+            max-width: 650px;
+            margin: 80px auto;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 32px;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 24px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0077cc;
+            outline: none;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-item input {
+            margin-right: 6px;
+        }
+
+        .radio-item label {
+            font-weight: 500;
+            color: #444;
+        }
+
+        input[type="submit"] {
+            background-color: #0077cc;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+
+        img {
+            display: block;
+            margin: 50px auto 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 40px 20px;
+                padding: 30px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
 <body>
 
+<div class="container">
     <h1>Stonks</h1>
 
     <form onsubmit="handleForm(event)">
         <label for="tSymbol">Ticker Symbol:</label>
-        <input type="text" id="tSymbol" name="tSymbol"><br><br>
+        <input type="text" id="tSymbol" name="tSymbol" required>
 
-        <input type="radio" id="daily" name="timeframe" value="DAILY">
-        <label for="daily">Daily</label><br>
-
-        <input type="radio" id="weekly" name="timeframe" value="WEEKLY">
-        <label for="weekly">Weekly</label><br>
-
-        <input type="radio" id="monthly" name="timeframe" value="MONTHLY">
-        <label for="monthly">Monthly</label><br><br>
+        <div class="radio-group">
+            <div class="radio-item">
+                <input type="radio" id="daily" name="timeframe" value="DAILY" required>
+                <label for="daily">Daily</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" id="weekly" name="timeframe" value="WEEKLY">
+                <label for="weekly">Weekly</label>
+            </div>
+            <div class="radio-item">
+                <input type="radio" id="monthly" name="timeframe" value="MONTHLY">
+                <label for="monthly">Monthly</label>
+            </div>
+        </div>
 
         <input type="submit" value="Submit">
     </form>
 
-    <br><br><br>
-    <!-- <img src="../../graph.png" alt=""> -->
+    <img src="{{ url_for('chart') }}" alt="Candlestick Chart">
+</div>
+
+
+
 
     <script>
         function handleForm(event) {
