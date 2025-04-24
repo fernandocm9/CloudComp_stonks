@@ -5,7 +5,7 @@ This README file goes over the process of building and running the Stonks App on
 Clound Environments
 1. Open up your Cloud Management Console, configure and deploy a virtual machine.
 2. In the network configuration, select a port you want to open which will be used to serve the application.
-3. Take not of the IP address that has been assigned to your virtual environment.
+3. Take note of the IP address that has been assigned to your virtual environment.
 4. Connect to your virtual machine via SSH or Bastion
 5. Type in the command "source venv/bin/activate" to activate the virtual environment.
 6. Type in the "pwd" command to confirm you are in the root directory and can see the venv, application and templates directories.
